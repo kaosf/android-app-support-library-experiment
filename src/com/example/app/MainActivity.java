@@ -11,7 +11,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.NavUtils;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -99,7 +98,6 @@ public class MainActivity
   ) {
     // When the given tab is selected, switch to the corresponding page in
     // the ViewPager.
-    Log.d("kaosf", "onTabSelected tab.getPosition(): " + tab.getPosition());
     mViewPager.setCurrentItem(tab.getPosition());
   }
 
@@ -108,7 +106,6 @@ public class MainActivity
     ActionBar.Tab tab,
     FragmentTransaction fragmentTransaction
   ) {
-    Log.d("kaosf", "onTabUnselected tab.getPosition(): " + tab.getPosition());
   }
 
   @Override
@@ -116,7 +113,6 @@ public class MainActivity
     ActionBar.Tab tab,
     FragmentTransaction fragmentTransaction
   ) {
-    Log.d("kaosf", "onTabReselected tab.getPosition(): " + tab.getPosition());
   }
 
   /**
@@ -134,7 +130,6 @@ public class MainActivity
       // getItem is called to instantiate the fragment for the given page.
       // Return a DummySectionFragment (defined as a static inner class
       // below) with the page number as its lone argument.
-      Log.d("kaosf", "SectionsPagerAdapter getItem, position: " + position);
       Fragment fragment = new DummySectionFragment();
       Bundle args = new Bundle();
       args.putInt(DummySectionFragment.ARG_SECTION_NUMBER, position + 1);
@@ -175,7 +170,6 @@ public class MainActivity
     public static final String ARG_SECTION_NUMBER = "section_number";
 
     public DummySectionFragment() {
-      Log.d("kaosf", "dummy-section-fragment constructor");
     }
 
     @Override
@@ -190,7 +184,6 @@ public class MainActivity
       TextView dummyTextView = (TextView)(
         rootView.findViewById(R.id.section_label)
       );
-      Log.d("kaosf", "onCreateView, int: " + Integer.toString(getArguments().getInt(ARG_SECTION_NUMBER)));
       dummyTextView.setText(
         Integer.toString(getArguments().getInt(ARG_SECTION_NUMBER))
       );
