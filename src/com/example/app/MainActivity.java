@@ -17,7 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.webkit.WebView;
 
 public class MainActivity
   extends FragmentActivity
@@ -181,12 +181,8 @@ public class MainActivity
       View rootView = inflater.inflate(
         R.layout.fragment_main_dummy, container, false
       );
-      TextView dummyTextView = (TextView)(
-        rootView.findViewById(R.id.section_label)
-      );
-      dummyTextView.setText(
-        Integer.toString(getArguments().getInt(ARG_SECTION_NUMBER))
-      );
+      WebView wv = (WebView)(rootView.findViewById(R.id.webview));
+      wv.loadUrl("http://google.com");
       return rootView;
     }
   }
