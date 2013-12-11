@@ -182,8 +182,7 @@ public class MainActivity
         R.layout.fragment_main_dummy, container, false
       );
       WebView wv = (WebView)(rootView.findViewById(R.id.webview));
-      wv.getSettings().setJavaScriptEnabled(true);
-      wv.loadUrl(getString(R.string.uri));
+      wv.loadUrl("http://google.com");
       return rootView;
     }
   }
