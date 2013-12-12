@@ -193,6 +193,11 @@ public class MainActivity
       wv.loadUrl("http://google.com");
       return rootView;
     }
+
+    @Override
+    public void onPause() {
+      Log.d("kaosf", "onPause");
+    }
   }
 
 }
