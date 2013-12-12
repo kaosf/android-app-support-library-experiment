@@ -182,7 +182,7 @@ public class MainActivity
         R.layout.fragment_main_dummy, container, false
       );
       WebView wv = (WebView)(rootView.findViewById(R.id.webview));
-      wv.loadUrl("http://google.com");
+      wv.loadUrl("http://www.google.co.jp");
       return rootView;
     }
   }
