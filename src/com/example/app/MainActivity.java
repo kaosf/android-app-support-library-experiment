@@ -175,6 +175,12 @@ public class MainActivity
     }
 
     @Override
+    public void onCreate(Bundle savedInstanceState) {
+      super.onCreate(savedInstanceState);
+      Log.d("kaosf", "onCreate, savedInstanceState: " + savedInstanceState);
+    }
+
+    @Override
     public View onCreateView(
       LayoutInflater inflater,
       ViewGroup container,
