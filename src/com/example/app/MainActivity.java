@@ -11,6 +11,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.NavUtils;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -18,6 +19,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 public class MainActivity
   extends FragmentActivity
@@ -182,6 +184,12 @@ public class MainActivity
         R.layout.fragment_main_dummy, container, false
       );
       WebView wv = (WebView)(rootView.findViewById(R.id.webview));
+      wv.setWebViewClient(new WebViewClient() {
+        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+          Log.d("kaosf", "shouldOverrideUrlLoading, url: " + url);
+          return true;
+        }
+      });
       wv.loadUrl("http://google.com");
       return rootView;
     }
