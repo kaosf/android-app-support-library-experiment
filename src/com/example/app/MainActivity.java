@@ -187,7 +187,7 @@ public class MainActivity
       wv.setWebViewClient(new WebViewClient() {
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
           Log.d("kaosf", "shouldOverrideUrlLoading, url: " + url);
-          return true;
+          return false;
         }
       });
       wv.loadUrl("http://google.com");
