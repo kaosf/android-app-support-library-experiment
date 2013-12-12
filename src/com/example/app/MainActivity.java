@@ -196,6 +196,7 @@ public class MainActivity
 
     @Override
     public void onPause() {
+      super.onPause();
       Log.d("kaosf", "onPause");
     }
   }
