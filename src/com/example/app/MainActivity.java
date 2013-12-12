@@ -199,6 +199,12 @@ public class MainActivity
       super.onPause();
       Log.d("kaosf", "onPause");
     }
+
+    @Override
+    public void onResume() {
+      super.onResume();
+      Log.d("kaosf", "onResume");
+    }
   }
 
 }
