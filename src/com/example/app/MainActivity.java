@@ -186,6 +186,7 @@ public class MainActivity
       ViewGroup container,
       Bundle savedInstanceState
     ) {
+      Log.d("kaosf", "onCreateView");
       View rootView = inflater.inflate(
         R.layout.fragment_main_dummy, container, false
       );
