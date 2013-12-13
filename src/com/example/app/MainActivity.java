@@ -171,15 +171,12 @@ public class MainActivity
      */
     public static final String ARG_SECTION_NUMBER = "section_number";
 
-    private boolean isFirstCreatingView;
-
     public DummySectionFragment() {
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
-      isFirstCreatingView = true;
       Log.d("kaosf", "onCreate, savedInstanceState: " + savedInstanceState);
     }
 
@@ -193,16 +190,13 @@ public class MainActivity
         R.layout.fragment_main_dummy, container, false
       );
       WebView wv = (WebView)(rootView.findViewById(R.id.webview));
-      if (isFirstCreatingView) {
-        wv.setWebViewClient(new WebViewClient() {
-          public boolean shouldOverrideUrlLoading(WebView view, String url) {
-            Log.d("kaosf", "shouldOverrideUrlLoading, url: " + url);
-            return false;
-          }
-        });
-        wv.loadUrl("http://google.com");
-        isFirstCreatingView = false;
-      }
+      wv.setWebViewClient(new WebViewClient() {
+        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+          Log.d("kaosf", "shouldOverrideUrlLoading, url: " + url);
+          return false;
+        }
+      });
+      wv.loadUrl("http://google.com");
       return rootView;
     }
 
