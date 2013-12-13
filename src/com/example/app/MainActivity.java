@@ -172,7 +172,7 @@ public class MainActivity
     public static final String ARG_SECTION_NUMBER = "section_number";
 
     public DummySectionFragment() {
-      setRetainInstance(false);
+      setRetainInstance(true);
     }
 
     @Override
