@@ -84,6 +84,8 @@ public class MainActivity
           .setTabListener(this)
       );
     }
+
+    Log.d("kaosf", "mViewPager.getOffscreenPageLimit: " + mViewPager.getOffscreenPageLimit());
   }
 
   @Override
