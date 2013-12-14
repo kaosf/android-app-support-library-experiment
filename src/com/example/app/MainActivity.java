@@ -202,6 +202,12 @@ public class MainActivity
     }
 
     @Override
+    public void onDestroyView() {
+      super.onDestroyView();
+      Log.d("kaosf", "onDestroyView");
+    }
+
+    @Override
     public void onPause() {
       super.onPause();
       Log.d("kaosf", "onPause");
