@@ -11,7 +11,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.NavUtils;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -84,11 +83,7 @@ public class MainActivity
           .setTabListener(this)
       );
     }
-
-    Log.d("kaosf", "mViewPager.getOffscreenPageLimit: " + mViewPager.getOffscreenPageLimit());
-    // default: 1
     mViewPager.setOffscreenPageLimit(2);
-    Log.d("kaosf", "mViewPager.getOffscreenPageLimit: " + mViewPager.getOffscreenPageLimit() + " (new)");
   }
 
   @Override
@@ -180,48 +175,22 @@ public class MainActivity
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-      super.onCreate(savedInstanceState);
-      Log.d("kaosf", "onCreate, savedInstanceState: " + savedInstanceState);
-    }
-
-    @Override
     public View onCreateView(
       LayoutInflater inflater,
       ViewGroup container,
       Bundle savedInstanceState
     ) {
-      Log.d("kaosf", "onCreateView");
       View rootView = inflater.inflate(
         R.layout.fragment_main_dummy, container, false
       );
       WebView wv = (WebView)(rootView.findViewById(R.id.webview));
       wv.setWebViewClient(new WebViewClient() {
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
-          Log.d("kaosf", "shouldOverrideUrlLoading, url: " + url);
           return false;
         }
       });
       wv.loadUrl("http://google.com");
       return rootView;
-    }
-
-    @Override
-    public void onDestroyView() {
-      super.onDestroyView();
-      Log.d("kaosf", "onDestroyView");
-    }
-
-    @Override
-    public void onPause() {
-      super.onPause();
-      Log.d("kaosf", "onPause");
-    }
-
-    @Override
-    public void onResume() {
-      super.onResume();
-      Log.d("kaosf", "onResume");
     }
   }
 
