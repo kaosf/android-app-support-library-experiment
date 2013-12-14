@@ -18,6 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 public class MainActivity
   extends FragmentActivity
@@ -82,6 +83,7 @@ public class MainActivity
           .setTabListener(this)
       );
     }
+    mViewPager.setOffscreenPageLimit(2);
   }
 
   @Override
@@ -182,6 +184,11 @@ public class MainActivity
         R.layout.fragment_main_dummy, container, false
       );
       WebView wv = (WebView)(rootView.findViewById(R.id.webview));
+      wv.setWebViewClient(new WebViewClient() {
+        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+          return false;
+        }
+      });
       wv.loadUrl("http://google.com");
       return rootView;
     }

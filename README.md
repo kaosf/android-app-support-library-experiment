@@ -1,5 +1,9 @@
 # Android app support library experiment
 
+## References
+
+* http://www.techdoctranslator.com/android/guide/activities/fragments
+
 ## Environment
 
 * OS: Ubuntu 12.04 amd64
