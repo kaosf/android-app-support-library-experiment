@@ -86,6 +86,9 @@ public class MainActivity
     }
 
     Log.d("kaosf", "mViewPager.getOffscreenPageLimit: " + mViewPager.getOffscreenPageLimit());
+    // default: 1
+    mViewPager.setOffscreenPageLimit(2);
+    Log.d("kaosf", "mViewPager.getOffscreenPageLimit: " + mViewPager.getOffscreenPageLimit() + " (new)");
   }
 
   @Override
