@@ -2,7 +2,7 @@ package com.example.app;
 
 import java.util.Locale;
 
-import android.app.ActionBar;
+import android.support.v7.app.ActionBar;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
